@@ -1,0 +1,292 @@
+[gd_scene load_steps=14 format=3 uid="uid://dsri03lapmrlt"]
+
+[ext_resource type="Script" uid="uid://d1xljb8xic3gp" path="res://floutwitch_1.gd" id="1_3xh31"]
+[ext_resource type="Texture2D" uid="uid://d02j3sud1vvwv" path="res://Sprites/tile_set.png" id="2_5umyv"]
+
+[sub_resource type="Animation" id="Animation_5umyv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../player_eyes:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(60, 90)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(61, 91)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../player_eyes:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gu4d4"]
+resource_name = "flip"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../player_eyes:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3y64y"]
+resource_name = "flip_left"
+length = 0.2
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../player_eyes:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3xh31"]
+resource_name = "idle"
+length = 6.25
+loop_mode = 1
+step = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../player_eyes:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 4.75, 5.75, 10, 12, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(59, 90), Vector2i(59, 90), Vector2i(58, 90), Vector2i(60, 90), Vector2i(61, 90), Vector2i(60, 90), Vector2i(59, 90), Vector2i(59, 90), Vector2i(58, 90), Vector2i(59, 90)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5, 4.75, 5, 5.25, 5.5, 5.75, 6, 9.5, 10, 10.5, 11, 11.5, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(30, 91), Vector2i(31, 91), Vector2i(32, 91), Vector2i(33, 91), Vector2i(34, 91), Vector2i(35, 91), Vector2i(36, 91), Vector2i(37, 91), Vector2i(38, 91), Vector2i(39, 91), Vector2i(40, 91), Vector2i(41, 91), Vector2i(42, 91), Vector2i(43, 91), Vector2i(44, 91), Vector2i(45, 91), Vector2i(46, 91), Vector2i(47, 91), Vector2i(49, 91), Vector2i(50, 91), Vector2i(51, 91), Vector2i(52, 91), Vector2i(53, 91), Vector2i(54, 91), Vector2i(55, 91), Vector2i(56, 91), Vector2i(57, 91), Vector2i(58, 91), Vector2i(59, 91), Vector2i(60, 91), Vector2i(61, 91)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gu4d4"]
+_data = {
+&"RESET": SubResource("Animation_5umyv"),
+&"flip": SubResource("Animation_gu4d4"),
+&"flip_left": SubResource("Animation_3y64y"),
+&"idle": SubResource("Animation_3xh31")
+}
+
+[sub_resource type="Animation" id="Animation_yltys"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../player_eyes:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_adlax"]
+resource_name = "flip"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../player_eyes:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tdhot"]
+resource_name = "flip_left"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../player_eyes:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yltys"]
+_data = {
+&"RESET": SubResource("Animation_yltys"),
+&"flip": SubResource("Animation_adlax"),
+&"flip_left": SubResource("Animation_tdhot")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu4d4"]
+size = Vector2(13, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xh31"]
+size = Vector2(13, 4)
+
+[node name="floutwitch1" type="CharacterBody2D" groups=["floutwitch"]]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_3xh31")
+
+[node name="player_sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -13)
+texture = ExtResource("2_5umyv")
+hframes = 94
+vframes = 94
+frame = 8615
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player_sprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_gu4d4")
+}
+autoplay = "idle"
+
+[node name="AnimationPlayerflip" type="AnimationPlayer" parent="player_sprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_yltys")
+}
+
+[node name="player_eyes" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -12.8)
+texture = ExtResource("2_5umyv")
+hframes = 94
+vframes = 94
+frame = 8520
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_gu4d4")
+
+[node name="Area2D" type="Area2D" parent="." groups=["floutwitch"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_3xh31")
+
+[node name="gun_point" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(7.2, -13.2)

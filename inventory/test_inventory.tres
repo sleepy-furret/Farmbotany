@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=8 format=3 uid="uid://b5ocejrd1thq6"]
+
+[ext_resource type="Script" uid="uid://cdfjhyfiaxqle" path="res://inventory/inventory_data.gd" id="1_l43y6"]
+[ext_resource type="Script" uid="uid://bqvvkc8ag2d1r" path="res://inventory/slot_data.gd" id="2_vykgx"]
+[ext_resource type="Resource" uid="uid://5fhf2ust7nwg" path="res://inventory/items/book.tres" id="3_30wvq"]
+[ext_resource type="Resource" uid="uid://chjvb7fqsd7b6" path="res://inventory/items/seed.tres" id="4_30wvq"]
+
+[sub_resource type="Resource" id="Resource_30wvq"]
+script = ExtResource("2_vykgx")
+item_data = ExtResource("3_30wvq")
+quantity = 2
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[sub_resource type="Resource" id="Resource_g3rim"]
+resource_local_to_scene = true
+script = ExtResource("2_vykgx")
+item_data = ExtResource("4_30wvq")
+quantity = 2
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[sub_resource type="Resource" id="Resource_vykgx"]
+script = ExtResource("2_vykgx")
+item_data = ExtResource("3_30wvq")
+quantity = 3
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_l43y6")
+slot_datas = Array[ExtResource("2_vykgx")]([null, null, null, SubResource("Resource_30wvq"), SubResource("Resource_g3rim"), null, null, SubResource("Resource_vykgx"), null, null, null, null])
+metadata/_custom_type_script = "uid://cdfjhyfiaxqle"

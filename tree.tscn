@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://nlu3vechk0k6"]
+
+[ext_resource type="Script" uid="uid://cetcb5os7cxwh" path="res://tree.gd" id="1_nnvrw"]
+[ext_resource type="Texture2D" uid="uid://cds82okgm0axr" path="res://icon.svg" id="2_gvmkm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2g23"]
+texture = ExtResource("2_gvmkm")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_44ud8"]
+sources/0 = SubResource("TileSetAtlasSource_d2g23")
+
+[node name="Tree" type="Node2D"]
+script = ExtResource("1_nnvrw")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-20, -20)
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0)
+tile_set = SubResource("TileSet_44ud8")

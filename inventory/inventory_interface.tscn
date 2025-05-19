@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceox2x36bj82g"]
+
+[ext_resource type="Script" uid="uid://bat34uumplknj" path="res://inventory/inventory_interface.gd" id="1_4kgnf"]
+[ext_resource type="PackedScene" uid="uid://cnt4jxa2elaja" path="res://inventory/inventory.tscn" id="2_dl01d"]
+[ext_resource type="PackedScene" uid="uid://dnbwnnnthtc2n" path="res://inventory/grabbed_slot.tscn" id="3_yj37f"]
+[ext_resource type="Texture2D" uid="uid://d02j3sud1vvwv" path="res://Sprites/tile_set.png" id="4_2ro2f"]
+
+[node name="InventoryInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4kgnf")
+
+[node name="Inventory" parent="." instance=ExtResource("2_dl01d")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 495.0
+offset_bottom = 42.0
+
+[node name="ExternalInventory" parent="." instance=ExtResource("2_dl01d")]
+layout_mode = 0
+offset_left = 3416.0
+offset_top = -360.0
+offset_right = 3911.0
+offset_bottom = -318.0
+
+[node name="grabbed_slot" parent="." instance=ExtResource("3_yj37f")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 95.0
+offset_bottom = 105.0
+
+[node name="SellInventoryVisible" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ExternalInventorySell" parent="SellInventoryVisible" instance=ExtResource("2_dl01d")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 556.0
+offset_top = 286.0
+offset_right = 1051.0
+offset_bottom = 328.0
+
+[node name="sellected_sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(21, 20)
+scale = Vector2(2.4, 2.309)
+texture = ExtResource("4_2ro2f")
+hframes = 188
+vframes = 188
+frame = 182

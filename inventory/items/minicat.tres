@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://gbjcn6f3dv13"]
+
+[ext_resource type="Script" uid="uid://d1677qiem4f5p" path="res://item_data.gd" id="1_hr6tb"]
+[ext_resource type="Texture2D" uid="uid://drfupn0sqf44s" path="res://Sprites/items/minicat.png" id="2_5p6ek"]
+
+[resource]
+script = ExtResource("1_hr6tb")
+name = "Mini-cat"
+description = "\"All semelhances are mere coincidence.\""
+stackable = false
+texture = ExtResource("2_5p6ek")
+value = 1000
+metadata/_custom_type_script = "uid://d1677qiem4f5p"

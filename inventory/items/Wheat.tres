@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bwagetydpau1b"]
+
+[ext_resource type="Script" uid="uid://d1677qiem4f5p" path="res://item_data.gd" id="1_jyl35"]
+[ext_resource type="Texture2D" uid="uid://d02j3sud1vvwv" path="res://Sprites/tile_set.png" id="2_re3a1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvpek"]
+atlas = ExtResource("2_re3a1")
+region = Rect2(96, 2993.16, 7, 15)
+
+[resource]
+script = ExtResource("1_jyl35")
+name = "Wheat"
+description = "It's just some wheat."
+stackable = true
+texture = SubResource("AtlasTexture_pvpek")
+value = 20
+metadata/_custom_type_script = "uid://d1677qiem4f5p"

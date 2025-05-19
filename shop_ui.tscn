@@ -1,0 +1,145 @@
+[gd_scene load_steps=14 format=3 uid="uid://bajomh7imjnfm"]
+
+[ext_resource type="Script" uid="uid://cvgy6ggwqt0aw" path="res://shop_ui.gd" id="1_dxujh"]
+[ext_resource type="Script" uid="uid://cdfjhyfiaxqle" path="res://inventory/inventory_data.gd" id="2_du886"]
+[ext_resource type="Script" uid="uid://bqvvkc8ag2d1r" path="res://inventory/slot_data.gd" id="3_qvybl"]
+[ext_resource type="PackedScene" uid="uid://dfop51eka0cnf" path="res://product_slot.tscn" id="4_arfta"]
+[ext_resource type="Texture2D" uid="uid://d02j3sud1vvwv" path="res://Sprites/tile_set.png" id="4_jsmax"]
+[ext_resource type="Resource" uid="uid://chjvb7fqsd7b6" path="res://inventory/items/seed.tres" id="5_jsmax"]
+[ext_resource type="Script" uid="uid://4d1msoe1guqr" path="res://product_data.gd" id="6_ccr50"]
+[ext_resource type="Resource" uid="uid://gbjcn6f3dv13" path="res://inventory/items/minicat.tres" id="6_jsmax"]
+
+[sub_resource type="Resource" id="Resource_arfta"]
+script = ExtResource("2_du886")
+slot_datas = Array[ExtResource("3_qvybl")]([null])
+metadata/_custom_type_script = "uid://cdfjhyfiaxqle"
+
+[sub_resource type="Resource" id="Resource_ccr50"]
+script = ExtResource("3_qvybl")
+item_data = ExtResource("5_jsmax")
+quantity = 1
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[sub_resource type="Resource" id="Resource_han1p"]
+resource_local_to_scene = true
+script = ExtResource("6_ccr50")
+item_data = SubResource("Resource_ccr50")
+value = 10
+metadata/_custom_type_script = "uid://4d1msoe1guqr"
+
+[sub_resource type="Resource" id="Resource_06ldd"]
+script = ExtResource("3_qvybl")
+item_data = ExtResource("6_jsmax")
+quantity = 1
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[sub_resource type="Resource" id="Resource_ok5pp"]
+script = ExtResource("6_ccr50")
+item_data = SubResource("Resource_06ldd")
+value = 0
+metadata/_custom_type_script = "uid://4d1msoe1guqr"
+
+[node name="shop ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dxujh")
+inventory_data = SubResource("Resource_arfta")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 47.0
+offset_top = 41.0
+offset_right = 474.0
+offset_bottom = 270.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_jsmax")
+region_rect = Rect2(2928, 0, 16, 16)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="sell_options" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="sell_Button" type="Button" parent="sell_options"]
+layout_mode = 0
+offset_left = 269.5
+offset_top = 423.0
+offset_right = 885.5
+offset_bottom = 600.0
+text = "Sell"
+
+[node name="sellect_options" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="buy_option" type="Button" parent="sellect_options"]
+layout_mode = 2
+offset_left = 186.0
+offset_top = 412.0
+offset_right = 516.0
+offset_bottom = 513.0
+text = "Buy"
+
+[node name="sell_option" type="Button" parent="sellect_options"]
+layout_mode = 2
+offset_left = 616.0
+offset_top = 412.0
+offset_right = 994.0
+offset_bottom = 513.0
+text = "Sell"
+
+[node name="buy_options" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="buy_Button" type="Button" parent="buy_options"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 491.0
+offset_right = 1005.0
+offset_bottom = 609.0
+text = "Buy"
+
+[node name="GridContainer" type="GridContainer" parent="buy_options"]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 291.0
+offset_right = 740.0
+offset_bottom = 331.0
+theme_override_constants/h_separation = 40
+columns = 4
+
+[node name="ProductSlot" parent="buy_options/GridContainer" instance=ExtResource("4_arfta")]
+layout_mode = 2
+product_data = SubResource("Resource_han1p")
+
+[node name="ProductSlot2" parent="buy_options/GridContainer" instance=ExtResource("4_arfta")]
+layout_mode = 2
+product_data = SubResource("Resource_ok5pp")
+
+[node name="back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 73.0
+offset_right = 336.0
+offset_bottom = 146.0
+text = "back"
+
+[connection signal="button_down" from="sell_options/sell_Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="sellect_options/buy_option" to="." method="_on_buy_option_button_down"]
+[connection signal="button_down" from="sellect_options/sell_option" to="." method="_on_sell_option_button_down"]
+[connection signal="button_down" from="back_Button" to="." method="_on_back_button_button_down"]

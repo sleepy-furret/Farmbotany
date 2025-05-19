@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgftqqi4die"]
+
+[ext_resource type="Script" uid="uid://cg5qcrbcohlhn" path="res://wheat.gd" id="1_3n0ht"]
+[ext_resource type="Resource" uid="uid://bwagetydpau1b" path="res://inventory/items/Wheat.tres" id="2_68t0m"]
+[ext_resource type="Script" uid="uid://bqvvkc8ag2d1r" path="res://inventory/slot_data.gd" id="4_0vgj0"]
+[ext_resource type="Texture2D" uid="uid://bwvcwcwl6u3vj" path="res://Sprites/harvests/wheat_growing.png" id="4_68t0m"]
+[ext_resource type="Texture2D" uid="uid://dkeqo4hlvdbr6" path="res://Sprites/white_screen.png" id="5_3n0ht"]
+
+[sub_resource type="Resource" id="Resource_jw1da"]
+resource_local_to_scene = true
+script = ExtResource("4_0vgj0")
+item_data = ExtResource("2_68t0m")
+quantity = 1
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[node name="wheat" type="Node2D"]
+script = ExtResource("1_3n0ht")
+wheat = SubResource("Resource_jw1da")
+
+[node name="wheat_sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_68t0m")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(36.5, 29.5)
+scale = Vector2(299, 249)
+texture = ExtResource("5_3n0ht")

@@ -1,0 +1,54 @@
+[gd_scene load_steps=14 format=3 uid="uid://dxx8pt68x1vid"]
+
+[ext_resource type="Script" uid="uid://blhuggtxoqls7" path="res://save_system.gd" id="1_irwv8"]
+[ext_resource type="Resource" uid="uid://chjvb7fqsd7b6" path="res://inventory/items/seed.tres" id="2_dguqr"]
+[ext_resource type="Script" uid="uid://bqvvkc8ag2d1r" path="res://inventory/slot_data.gd" id="3_pm2oq"]
+[ext_resource type="Resource" uid="uid://bwagetydpau1b" path="res://inventory/items/Wheat.tres" id="4_rj5ri"]
+[ext_resource type="Resource" uid="uid://5fhf2ust7nwg" path="res://inventory/items/book.tres" id="5_ekow2"]
+[ext_resource type="Resource" uid="uid://gbjcn6f3dv13" path="res://inventory/items/minicat.tres" id="6_pm2oq"]
+[ext_resource type="Script" uid="uid://bvir2hdj7k6sh" path="res://tiles/tile_data.gd" id="7_ekow2"]
+[ext_resource type="Resource" uid="uid://bcimu2tt46hte" path="res://tiles/tiles/wheat.tres" id="8_ofagu"]
+
+[sub_resource type="Resource" id="Resource_ofagu"]
+resource_local_to_scene = true
+script = ExtResource("3_pm2oq")
+item_data = ExtResource("2_dguqr")
+quantity = 1
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[sub_resource type="Resource" id="Resource_udsjr"]
+resource_local_to_scene = true
+script = ExtResource("3_pm2oq")
+item_data = ExtResource("4_rj5ri")
+quantity = 1
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[sub_resource type="Resource" id="Resource_ph4qy"]
+resource_local_to_scene = true
+script = ExtResource("3_pm2oq")
+item_data = ExtResource("5_ekow2")
+quantity = 1
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[sub_resource type="Resource" id="Resource_rj5ri"]
+resource_local_to_scene = true
+script = ExtResource("3_pm2oq")
+item_data = ExtResource("6_pm2oq")
+quantity = 1
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[sub_resource type="Resource" id="Resource_mxoy6"]
+resource_local_to_scene = true
+script = ExtResource("7_ekow2")
+state = ""
+sub_state = ""
+metadata/_custom_type_script = "uid://bvir2hdj7k6sh"
+
+[node name="save_system" type="Node"]
+script = ExtResource("1_irwv8")
+seed = SubResource("Resource_ofagu")
+wheat = SubResource("Resource_udsjr")
+book = SubResource("Resource_ph4qy")
+mini_cat = SubResource("Resource_rj5ri")
+generic_tile = SubResource("Resource_mxoy6")
+wheat_tile = ExtResource("8_ofagu")

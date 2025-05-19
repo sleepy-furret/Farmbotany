@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://chjvb7fqsd7b6"]
+
+[ext_resource type="Script" uid="uid://d1677qiem4f5p" path="res://item_data.gd" id="1_ching"]
+[ext_resource type="Texture2D" uid="uid://bwvcwcwl6u3vj" path="res://Sprites/harvests/wheat_growing.png" id="2_6jyls"]
+
+[resource]
+script = ExtResource("1_ching")
+name = "Seed"
+description = ""
+stackable = true
+texture = ExtResource("2_6jyls")
+value = 0
+metadata/_custom_type_script = "uid://d1677qiem4f5p"

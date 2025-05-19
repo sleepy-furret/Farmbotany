@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://puydx4w6dhhs"]
+
+[ext_resource type="Script" uid="uid://bfttf4d2p1txi" path="res://shop.gd" id="1_e7rdd"]
+[ext_resource type="Texture2D" uid="uid://d02j3sud1vvwv" path="res://Sprites/tile_set.png" id="1_viryw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k025b"]
+size = Vector2(129, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viryw"]
+size = Vector2(175, 168)
+
+[node name="shop" type="Node2D"]
+script = ExtResource("1_e7rdd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2.5, 26.5)
+shape = SubResource("RectangleShape2D_k025b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -22)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_viryw")
+hframes = 47
+vframes = 47
+frame = 2162
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -21)
+shape = SubResource("RectangleShape2D_viryw")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

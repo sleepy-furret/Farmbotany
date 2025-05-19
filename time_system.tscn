@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://coi4uqvw3dej3"]
+
+[ext_resource type="Script" uid="uid://b1ytj543iycgt" path="res://time_system.gd" id="1_l3txm"]
+
+[node name="time_system" type="Node"]
+script = ExtResource("1_l3txm")
+
+[node name="second_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="hour_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 60.0
+
+[connection signal="timeout" from="second_timer" to="." method="_on_second_timer_timeout"]

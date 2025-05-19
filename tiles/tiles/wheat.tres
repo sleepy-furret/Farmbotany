@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileSlotData" load_steps=3 format=3 uid="uid://bcimu2tt46hte"]
+
+[ext_resource type="Resource" uid="uid://c327hh853h0bc" path="res://tiles/blocks/wheat.tres" id="1_tt5pe"]
+[ext_resource type="Script" uid="uid://bvir2hdj7k6sh" path="res://tiles/tile_data.gd" id="2_3fv1j"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_3fv1j")
+block_data = ExtResource("1_tt5pe")
+state = "Wheat"
+sub_state = ""
+metadata/_custom_type_script = "uid://bvir2hdj7k6sh"

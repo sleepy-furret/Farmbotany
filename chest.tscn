@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdxwc7r3q5ato"]
+
+[ext_resource type="Script" uid="uid://dhdkprkb0kghf" path="res://chest.gd" id="1_twpm2"]
+[ext_resource type="Script" uid="uid://cdfjhyfiaxqle" path="res://inventory/inventory_data.gd" id="2_trlyu"]
+[ext_resource type="Script" uid="uid://bqvvkc8ag2d1r" path="res://inventory/slot_data.gd" id="3_x7mpe"]
+[ext_resource type="Resource" uid="uid://5fhf2ust7nwg" path="res://inventory/items/book.tres" id="4_bv3sb"]
+
+[sub_resource type="Resource" id="Resource_day8l"]
+script = ExtResource("3_x7mpe")
+item_data = ExtResource("4_bv3sb")
+quantity = 1
+metadata/_custom_type_script = "uid://bqvvkc8ag2d1r"
+
+[sub_resource type="Resource" id="Resource_t3ekh"]
+script = ExtResource("2_trlyu")
+slot_datas = Array[ExtResource("3_x7mpe")]([null, SubResource("Resource_day8l"), null, null, null, null])
+metadata/_custom_type_script = "uid://cdfjhyfiaxqle"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trlyu"]
+size = Vector2(134, 135)
+
+[node name="chest" type="Node2D" groups=["external_inventory"]]
+script = ExtResource("1_twpm2")
+inventory_data = SubResource("Resource_t3ekh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 67.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_trlyu")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://5fhf2ust7nwg"]
+
+[ext_resource type="Script" uid="uid://d1677qiem4f5p" path="res://item_data.gd" id="1_8f5lu"]
+[ext_resource type="Texture2D" uid="uid://civvjqjxl7sii" path="res://Sprites/items/book.png" id="2_kd23t"]
+
+[resource]
+script = ExtResource("1_8f5lu")
+name = "Book"
+description = "A book"
+stackable = true
+texture = ExtResource("2_kd23t")
+value = 10
+metadata/_custom_type_script = "uid://d1677qiem4f5p"

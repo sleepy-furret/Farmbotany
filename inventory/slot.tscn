@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3onfdlqpvw5m"]
+
+[ext_resource type="Script" uid="uid://b8162imqhmlt3" path="res://inventory/slot.gd" id="1_sthnt"]
+[ext_resource type="Texture2D" uid="uid://d02j3sud1vvwv" path="res://Sprites/tile_set.png" id="2_sthnt"]
+
+[node name="Slot" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+offset_right = 101.0
+offset_bottom = 101.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_sthnt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(21, 20)
+scale = Vector2(2.4, 2.309)
+texture = ExtResource("2_sthnt")
+hframes = 188
+vframes = 188
+frame = 183
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+z_index = 2
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Quantity" type="Label" parent="."]
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+horizontal_alignment = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

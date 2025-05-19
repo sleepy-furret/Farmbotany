@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhv4iw723gner"]
+
+[ext_resource type="Script" uid="uid://bl4brfaahasvp" path="res://ui.gd" id="1_m6e0p"]
+[ext_resource type="PackedScene" uid="uid://n0etpbccp21v" path="res://inventory_slot.tscn" id="2_27fn8"]
+
+[node name="UI" type="Node2D"]
+script = ExtResource("1_m6e0p")
+
+[node name="inventory_slot1" parent="." instance=ExtResource("2_27fn8")]
+unique_name_in_owner = true
+position = Vector2(47, 50)
+
+[node name="inventory_slot2" parent="." instance=ExtResource("2_27fn8")]
+unique_name_in_owner = true
+position = Vector2(138, 51)
+item = "vsauce_face"
+
+[node name="inventory_slot3" parent="." instance=ExtResource("2_27fn8")]
+unique_name_in_owner = true
+position = Vector2(226, 51)
+item = ""

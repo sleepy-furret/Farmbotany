@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://bc28sp8aj0cl0"]
+
+[ext_resource type="PackedScene" uid="uid://dsri03lapmrlt" path="res://floutwitch_1.tscn" id="1_kl852"]
+[ext_resource type="Script" uid="uid://bat34uumplknj" path="res://inventory/inventory_interface.gd" id="2_4nmru"]
+[ext_resource type="Resource" uid="uid://b5ocejrd1thq6" path="res://inventory/test_inventory.tres" id="2_05u5g"]
+[ext_resource type="PackedScene" uid="uid://cnt4jxa2elaja" path="res://inventory/inventory.tscn" id="3_05u5g"]
+[ext_resource type="PackedScene" uid="uid://dnbwnnnthtc2n" path="res://inventory/grabbed_slot.tscn" id="4_cr3cd"]
+[ext_resource type="Texture2D" uid="uid://d02j3sud1vvwv" path="res://Sprites/tile_set.png" id="5_mjd5i"]
+
+[node name="scene_1" type="Node2D"]
+
+[node name="floutwitch1" parent="." instance=ExtResource("1_kl852")]
+position = Vector2(101, 90)
+inventory_data = ExtResource("2_05u5g")
+
+[node name="InventoryInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_4nmru")
+
+[node name="Inventory" parent="InventoryInterface" instance=ExtResource("3_05u5g")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 495.0
+offset_bottom = 42.0
+
+[node name="ExternalInventory" parent="InventoryInterface" instance=ExtResource("3_05u5g")]
+layout_mode = 0
+offset_left = 3416.0
+offset_top = -360.0
+offset_right = 3911.0
+offset_bottom = -318.0
+
+[node name="grabbed_slot" parent="InventoryInterface" instance=ExtResource("4_cr3cd")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 95.0
+offset_bottom = 105.0
+
+[node name="SellInventoryVisible" type="Control" parent="InventoryInterface"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ExternalInventorySell" parent="InventoryInterface/SellInventoryVisible" instance=ExtResource("3_05u5g")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 556.0
+offset_top = 286.0
+offset_right = 1051.0
+offset_bottom = 328.0
+
+[node name="sellected_sprite" type="Sprite2D" parent="InventoryInterface"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(21, 20)
+scale = Vector2(2.4, 2.309)
+texture = ExtResource("5_mjd5i")
+hframes = 188
+vframes = 188
+frame = 182

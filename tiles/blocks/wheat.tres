@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BlockData" load_steps=2 format=3 uid="uid://c327hh853h0bc"]
+
+[ext_resource type="Script" uid="uid://cmymecaffgbar" path="res://tiles/block_data.gd" id="1_0km4l"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_0km4l")
+scene = "res://wheat.tscn"
+name = "Wheat"
+metadata/_custom_type_script = "uid://cmymecaffgbar"
